@@ -31,7 +31,10 @@ app.use(cookieparser());
 //     methods: ['GET', 'POST', 'PUT', 'DELETE'],
 //     credentials: true // Allow credentials (cookies, authorization headers, etc.)
 // }));
-app.use(cors());
+app.use(cors({
+    origin:"*",
+    credentials:true
+}));
 
 
 
