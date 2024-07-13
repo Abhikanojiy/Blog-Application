@@ -9,7 +9,7 @@ const postRoute=require('./routes/postRoute');
 const cors=require('cors');
 const commentRoute=require('./routes/commentRoute')
 const path=require('path')
-const __dirname = path.resolve();
+// const __dirname = path.resolve();
 
 mongoose.connect(process.env.MONGO)
 .then(()=>{
