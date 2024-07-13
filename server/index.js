@@ -8,6 +8,8 @@ const cookieparser=require('cookie-parser');
 const postRoute=require('./routes/postRoute');
 const cors=require('cors');
 const commentRoute=require('./routes/commentRoute')
+const path=require('path')
+const __dirname = path.resolve();
 
 mongoose.connect(process.env.MONGO)
 .then(()=>{
@@ -33,10 +35,18 @@ app.use(cors());
 
 
 
+
+
 app.use('/api/user',userRouter);
 app.use('/api/auth',authRouter);
 app.use('/api/post',postRoute);
 app.use('/api/comment',commentRoute)
+
+app.use(express.static(path.join(__dirname, '/client/dist')));
+
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, 'client', 'dist', 'index.html'));
+});
 
 app.use((err,req,res,next)=>{
     const statusCode=err.statusCode||500;
