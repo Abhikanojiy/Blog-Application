@@ -14,7 +14,7 @@ const Postpage = () => {
     useEffect(()=>{
       const fetchrecent=async()=>{
         try{
-          const res=await fetch('/api/post/getpost?limit=3');
+          const res=await fetch('https://blog-application-one-snowy.vercel.app/api/post/getpost?limit=3');
           const data=await res.json();
           if(res.ok){
             setPostCard(data.posts);
@@ -35,7 +35,7 @@ const Postpage = () => {
             
             setloading(true);
             try{
-            const res=await fetch(`/api/post/getpost?slug=${postSlug}`)
+            const res=await fetch(`https://blog-application-one-snowy.vercel.app/api/post/getpost?slug=${postSlug}`)
         const data=await res.json();
         if(!res.ok){
             setloading(false);

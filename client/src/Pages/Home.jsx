@@ -12,7 +12,7 @@ const Home = () => {
       try{
 
       
-      const res=await fetch('/api/post/getpost');
+      const res=await fetch('https://blog-application-one-snowy.vercel.app/api/post/getpost');
       const data=await res.json();
       if(res.ok){
         setposts(data.posts);

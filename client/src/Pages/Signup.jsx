@@ -21,7 +21,7 @@ if(!formdata.username||!formdata.email||!formdata.password){
 try{
   setloading(true);
   seterrormessage(null);
-const response=await fetch('/api/auth/signup',{
+const response=await fetch('https://blog-application-one-snowy.vercel.app/api/auth/signup',{
   method:'POST',
   headers:{
     "Content-Type": "application/json",

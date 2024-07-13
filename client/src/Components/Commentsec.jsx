@@ -18,7 +18,7 @@ const handleLike=async(commentId)=>{
       navigate('/sign-in');
       return;
     }
-    const res = await fetch(`/api/comment/likecomment/${commentId}`, {
+    const res = await fetch(`https://blog-application-one-snowy.vercel.app/api/comment/likecomment/${commentId}`, {
       method: 'PUT',
     });
     if (res.ok) {
@@ -42,7 +42,7 @@ const handleLike=async(commentId)=>{
     const handleSubmit=async (e)=>{
       e.preventDefault();
       try{
-        const res=await fetch('/api/comment/create',{
+        const res=await fetch('https://blog-application-one-snowy.vercel.app/api/comment/create',{
           method:'POST',
           headers:{
             'Content-Type':'application/json'
@@ -68,7 +68,7 @@ setcommentError(error.message)
     useEffect(()=>{
       const fetchcomment=async()=>{
         try{
-          const res=await fetch(`/api/comment/getting/${postId}`)
+          const res=await fetch(`https://blog-application-one-snowy.vercel.app/api/comment/getting/${postId}`)
           
           if(res.ok){
             const data=await res.json();

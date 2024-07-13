@@ -26,7 +26,7 @@ const Createpost = () => {
   const handlesubmithandler=async (e)=>{
     e.preventDefault();
       try{
-        const res=await fetch('/api/post/create',{
+        const res=await fetch('https://blog-application-one-snowy.vercel.app/api/post/create',{
           method:'POST',
           headers:{
             "Content-Type":"application/json"

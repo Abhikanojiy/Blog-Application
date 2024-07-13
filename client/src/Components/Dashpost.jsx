@@ -19,7 +19,7 @@ const Dashpost =  ()=> {
     const handleDeleteUser=async ()=>{
         setShowModal(true);
         try{
-            const res=await fetch(`api/post/delete/${PostIdToDelete}/${currentUser._id}`,{
+            const res=await fetch(`https://blog-application-one-snowy.vercel.app/api/post/delete/${PostIdToDelete}/${currentUser._id}`,{
                 method:'DELETE'
             });
             const data=await res.json();
@@ -44,7 +44,7 @@ const Dashpost =  ()=> {
     useEffect(() => {
         const fetchPosts = async () => {
             try {
-                const res = await fetch(`api/post/getpost`);
+                const res = await fetch(`https://blog-application-one-snowy.vercel.app/api/post/getpost`);
                 const data = await res.json();
                 console.log(data.posts);
                 if (res.ok) {

@@ -12,7 +12,7 @@ const Comment = ({comment,onLike}) => {
     useEffect(()=>{
         const getuser=async()=>{
             try{
-                const res=await fetch(`/api/user/${comment.userId}`)
+                const res=await fetch(`https://blog-application-one-snowy.vercel.app/api/user/${comment.userId}`)
                 const data=await res.json();
             
                 if(res.ok){

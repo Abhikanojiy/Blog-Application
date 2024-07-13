@@ -28,7 +28,7 @@ const Updatepost = () => {
   useEffect(() => {
     try {
       const fetchPost = async () => {
-        const res = await fetch(`/api/post/getpost?postId=${postId}`);
+        const res = await fetch(`https://blog-application-one-snowy.vercel.app/api/post/getpost?postId=${postId}`);
         const data = await res.json();
         if (!res.ok) {
           console.log(data.message);
@@ -50,7 +50,7 @@ const Updatepost = () => {
   const updateposthandler=async(e)=>{
     e.preventDefault();
     try{
-      const res=await fetch(`/api/post/update/${formData._id}/${currentUser._id}`,{
+      const res=await fetch(`https://blog-application-one-snowy.vercel.app/api/post/update/${formData._id}/${currentUser._id}`,{
         method:'PUT',
         headers:{
           'Content-Type':'application/json'

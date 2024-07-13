@@ -19,7 +19,7 @@ const dispatch=useDispatch();
 
 const handlesignout=async ()=>{
     try{
-      const res=await fetch('api/user/signout',{
+      const res=await fetch('https://blog-application-one-snowy.vercel.app/api/user/signout',{
         method:'POST',
         
       })

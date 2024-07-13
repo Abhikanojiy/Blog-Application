@@ -25,7 +25,7 @@ const Oath =  () => {
                 photo:resultsFromGoogle.user.photoURL
             }
 
-            const response=await fetch('api/auth/google',{
+            const response=await fetch('https://blog-application-one-snowy.vercel.app/api/auth/google',{
               method:'POST',
               headers:{
                 'Content-Type':'Application/json'
